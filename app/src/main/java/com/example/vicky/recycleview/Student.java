@@ -1,5 +1,8 @@
 package com.example.vicky.recycleview;
 
+
+//this is how we make class as an ArayList like String
+
 public class Student{
 
     public Student(String name, String batch, String number, String location) {
@@ -15,7 +18,7 @@ public class Student{
         return name;
     }
 
-//    public String getOrModifyName(String s){
+//    public String getOrModifyName(String s){    //its an self made get and set..
 //        if (s.equals("")){
 //            return name;
 //        }

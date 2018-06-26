@@ -22,11 +22,14 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    //we initialize here whatever is required. example here we need Student arraylist
+
     ArrayList<Student> studentArrayList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         studentArrayList.add(new Student("Harshit", "Android", "123", "Delhi"));
         studentArrayList.add(new Student("Naman", "Android", "456", "New Delhi"));
         studentArrayList.add(new Student("Ashutosh", "Web", "789", "Dwarka"));

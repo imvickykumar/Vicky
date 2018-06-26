@@ -12,11 +12,16 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 //here adapter doesnot extends baseadapter as in before
+//here it extends recyclerview
+//MyviewHolder is new Student class as we know. Just being initialized
 
 public class MyStudentAdapter extends RecyclerView.Adapter<MyStudentAdapter.MyViewHolder> {
 
+    //we initialise here whatever is require here. Example here we require Student arraylist and context. so initialize them from any other page whereever they are built
+    //either we can make our own variables or can take from others. the variables or arraylist or context
+
     private ArrayList<Student> studentArrayList;
-    private Context context;  //ofcourse context is required
+    private Context context;          //of course context is required SINCE ITS not in the same main activity. so to use inflate we need context.
 
 
     //constructor
@@ -33,9 +38,11 @@ public class MyStudentAdapter extends RecyclerView.Adapter<MyStudentAdapter.MyVi
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 //        LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         LayoutInflater lif = LayoutInflater.from(context);
-        View inflatedView = lif.inflate(R.layout.item_row,parent,false);
+        View inflatedView = lif.inflate(R.layout.item_row,parent,false);  //here item_row.xml is attached to adapter. however mainactivity is always connected.
         return new MyViewHolder(inflatedView);
     }
+
+    //here binding and holding process is done
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
@@ -50,6 +57,8 @@ public class MyStudentAdapter extends RecyclerView.Adapter<MyStudentAdapter.MyVi
     public int getItemCount() {
         return studentArrayList.size();
     }
+
+    //making a new viewholder class so that its recycle view type list and takes less memory usage.
 
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView name,number,batch,location;
